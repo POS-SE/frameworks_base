@@ -18,6 +18,7 @@ package com.android.systemui.custom
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
 import com.android.systemui.qs.tiles.AutoBrightnessTile
+import com.android.systemui.qs.tiles.CPUInfoTile
 import com.android.systemui.qs.tiles.CaffeineTile
 import com.android.systemui.qs.tiles.CellularTile
 import com.android.systemui.qs.tiles.DataSwitchTile
@@ -34,6 +35,13 @@ import dagger.multibindings.StringKey
 
 @Module
 interface CustomModule {
+
+    /** Inject CPUInfoTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(CPUInfoTile.TILE_SPEC)
+    fun CPUInfoTile(cpuInfoTile: CPUInfoTile): QSTileImpl<*>
+
     /** Inject CaffeineTile into tileMap in QSModule */
     @Binds
     @IntoMap

@@ -86,6 +86,7 @@ class ShadeViewControllerEmptyImpl @Inject constructor() :
 
     override val shadeHeadsUpTracker = ShadeHeadsUpTrackerEmptyImpl()
     override val shadeFoldAnimator = ShadeFoldAnimatorEmptyImpl()
+    override fun reTickerView(visibility: Boolean) {}
 }
 
 class ShadeHeadsUpTrackerEmptyImpl : ShadeHeadsUpTracker {

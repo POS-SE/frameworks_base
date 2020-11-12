@@ -121,6 +121,9 @@ interface ShadeViewController {
     /** Removes a global layout listener. */
     fun removeOnGlobalLayoutListener(listener: ViewTreeObserver.OnGlobalLayoutListener)
 
+    /** Sets reticker view on notification */
+    fun reTickerView(visibility: Boolean)
+
     /**
      * Reconfigures the shade to show the AOD UI (clock, smartspace, etc). This is called by the
      * screen off animation controller in order to animate in AOD without "actually" fully switching
